@@ -3,7 +3,6 @@ import Box from './Box';
 import './ColorBoxes.css';
 
 class ColorBoxes extends Component {
-  
   static defaultProps = {
     numBoxes: 18
   }
@@ -11,10 +10,10 @@ class ColorBoxes extends Component {
   render() {
     let boxes = []
     for (let i = 0; i < this.props.numBoxes; i++) {
-      boxes.push(<Box />)
+      boxes.push(<Box key={i} />)
     }
     return (
-      <div className="ColorBoxes">
+      <div className="ColorBoxes" >
         {boxes}
       </div>
     )

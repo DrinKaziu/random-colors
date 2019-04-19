@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Box.css';
 
 class Box extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -22,17 +23,17 @@ class Box extends Component {
     return `rgb(${r}, ${g}, ${b})`;
   }
 
-  clickHandler = () => {
+  changeColor = () => {
     this.setState(prevState => {
       return {
         color: this.generateRandColor()
       }
     });
   }
-
+  
   render () {
     return (
-      <div className="Box" onClick={this.clickHandler} style={{backgroundColor: this.state.color}}></div>
+      <div className="Box" onClick={this.changeColor} style={{backgroundColor: this.state.color}}></div>
     )
   }
 }
